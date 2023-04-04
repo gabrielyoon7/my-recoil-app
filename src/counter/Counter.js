@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import { counterState } from './atoms';
+import { counterState } from '../atoms';
 
 function Counter() {
   const [counter, setCounter] = useRecoilState(counterState);
