@@ -1,6 +1,7 @@
 import { RecoilRoot } from "recoil";
 import Counter from "./counter/Counter";
 import TodoList from "./todo/TodoList";
+import CharacterCounter from "./characterCounter/CharacterCounter";
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
       <hr />
       <TodoList />
       <TodoList />
+      <hr />
+      <CharacterCounter />
     </RecoilRoot>
   );
 }
