@@ -1,5 +1,5 @@
 import { selector, useRecoilState, useRecoilValue } from "recoil";
-import { textState } from "../atoms";
+import { textState } from "../../atoms/atoms";
 
 function CharacterCounter() {
   return (
