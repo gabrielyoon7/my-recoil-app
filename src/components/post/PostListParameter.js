@@ -2,7 +2,7 @@ import { useRecoilValueLoadable } from 'recoil';
 import { fetchPostsWithParameter } from '../../atoms/postsAtoms';
 
 function PostListParameter() {
-  const postId = Math.floor(Math.random() * 100);
+  const postId = Math.floor(Math.random() * 100) + 1;
   const postLoadable = useRecoilValueLoadable(fetchPostsWithParameter(postId));
   switch (postLoadable.state) {
     case 'hasValue':
