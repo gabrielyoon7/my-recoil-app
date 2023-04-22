@@ -1,7 +1,7 @@
 import { useRecoilValueLoadable } from 'recoil';
-import { fetchPosts } from '../atoms/postsAtoms';
+import { fetchPosts } from '../../atoms/postsAtoms';
 
-function PostList() {
+function PostListBasic() {
   const postsLoadable = useRecoilValueLoadable(fetchPosts);
 
   switch (postsLoadable.state) {
@@ -23,4 +23,4 @@ function PostList() {
       return null;
   }
 }
-export default PostList;
+export default PostListBasic;

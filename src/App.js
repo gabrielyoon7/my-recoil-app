@@ -1,8 +1,9 @@
 import { RecoilRoot } from "recoil";
-import PostList from "./components/PostList";
+import PostListBasic from "./components/post/PostListBasic";
 import Counter from "./components/counter/Counter";
 import CharacterCounter from "./components/characterCounter/CharacterCounter";
 import TodoList from "./components/todo/TodoList";
+import PostListParameter from "./components/post/PostListParameter";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
       <hr />
       <CharacterCounter />
       <hr />
-      <PostList />
+      <PostListBasic />
+      <hr />
+      <PostListParameter />
+      <hr />
     </RecoilRoot>
   );
 }
