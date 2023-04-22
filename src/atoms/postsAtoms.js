@@ -14,7 +14,6 @@ export const fetchPosts = selector({
   },
 });
 
-
 export const fetchPostsWithParameter = selectorFamily({
   key: 'fetchPostsWithParameter',
   get: (postId) => async () => {
@@ -23,3 +22,5 @@ export const fetchPostsWithParameter = selectorFamily({
     return data;
   },
 });
+
+
