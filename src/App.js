@@ -4,6 +4,7 @@ import Counter from "./components/counter/Counter";
 import CharacterCounter from "./components/characterCounter/CharacterCounter";
 import TodoList from "./components/todo/TodoList";
 import PostListParameter from "./components/post/PostListParameter";
+import TempCelcius from "./components/TempCelcius";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
       <hr />
       <h1>데이터 파라미터로 요청</h1>
       <PostListParameter />
+      <hr />
+      <TempCelcius />
       <hr />
     </RecoilRoot>
   );

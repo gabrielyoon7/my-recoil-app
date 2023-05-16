@@ -1,9 +1,9 @@
 import { atom, selector, selectorFamily } from 'recoil';
 
-export const postsState = atom({
-  key: 'postsState',
-  default: [],
-});
+// export const postsState = atom({
+//   key: 'postsState',
+//   default: [],
+// });
 
 export const fetchPosts = selector({
   key: 'fetchPosts',
