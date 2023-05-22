@@ -6,6 +6,7 @@ import TodoListsPage from "./pages/TodoListsPage";
 import CharacterCounterPage from "./pages/CharacterCounterPage";
 import PostListPage from "./pages/PostListPage";
 import TempCelciusPage from "./pages/TempCelciusPage";
+import FontPage from "./pages/FontPage";
 
 export const homeChildren = [
   {
@@ -33,6 +34,11 @@ export const homeChildren = [
     path: "/temp-celcius",
     element: <TempCelciusPage />,
   },
+  {
+    title: 'FontPage',
+    path: '/font-page',
+    element: <FontPage />
+  }
 ]
 
 const router = createBrowserRouter([
