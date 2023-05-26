@@ -7,6 +7,7 @@ import CharacterCounterPage from "./pages/CharacterCounterPage";
 import PostListPage from "./pages/PostListPage";
 import TempCelciusPage from "./pages/TempCelciusPage";
 import FontPage from "./pages/FontPage";
+import UseRecoilCallbackPage from "./pages/UseRecoilCallbackPage";
 
 export const homeChildren = [
   {
@@ -38,6 +39,11 @@ export const homeChildren = [
     title: 'FontPage',
     path: '/font-page',
     element: <FontPage />
+  },
+  {
+    title: 'UseRecoilCallbackPage',
+    path: '/use-recoil-callback',
+    element: <UseRecoilCallbackPage />
   }
 ]
 
