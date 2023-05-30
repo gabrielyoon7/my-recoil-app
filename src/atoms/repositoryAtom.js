@@ -24,9 +24,14 @@ export const todoRepository=selector({
       }]);
     });
 
+    const deleteTodo = getCallback(({set})=>()=>{
+      set(repositoryTodoState,prev=>[...prev.slice(0,prev.length-1)])
+    })
+
     return {
       getTodo,
-      addTodo
+      addTodo,
+      deleteTodo
     }
 
   }

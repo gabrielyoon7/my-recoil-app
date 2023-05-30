@@ -6,12 +6,25 @@ function RepositoryPage(){
 
   return(
     <div>
+
+      <button
+        onClick={()=>{
+          const newId = todoState.getTodo().length;
+          todoState.addTodo(newId);
+        }}
+      >
+        데이터 추가하기
+      </button>
+      <button
+        onClick={()=>todoState.deleteTodo()}
+      >
+        데이터 삭제하기
+      </button>
       {
         todoState.getTodo().map((todo) =>(
           <div key={todo.id}>{todo.description}</div>
         ))
       }
-      <button onClick={()=>todoState.addTodo(todoState.getTodo().length)}>데이터 추가하기</button>
     </div>
   )
 }
