@@ -8,6 +8,7 @@ import PostListPage from "./pages/PostListPage";
 import TempCelciusPage from "./pages/TempCelciusPage";
 import FontPage from "./pages/FontPage";
 import UseRecoilCallbackPage from "./pages/UseRecoilCallbackPage";
+import RepositoryPage from "./pages/RepositoryPage";
 
 export const homeChildren = [
   {
@@ -44,6 +45,11 @@ export const homeChildren = [
     title: 'UseRecoilCallbackPage',
     path: '/use-recoil-callback',
     element: <UseRecoilCallbackPage />
+  },
+  {
+    title: 'Repository Patterns with Recoil getCallback',
+    path: '/repository-get-callback',
+    element: <RepositoryPage />
   }
 ]
 
