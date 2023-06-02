@@ -1,6 +1,6 @@
 import {useRecoilValue} from "recoil";
 import {todoListState} from "../../atoms/todo.jsx";
-import {todoRepository} from "./todoRepository.jsx";
+import {todoRepository} from "./todoRepository.js";
 
 function TodoWithGetCallbackPage() {
   const todoList = useRecoilValue(todoListState);
