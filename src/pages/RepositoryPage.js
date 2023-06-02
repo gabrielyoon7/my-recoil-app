@@ -1,27 +1,28 @@
 import {useRecoilValue} from "recoil";
-import {todoRepository} from "../atoms/repositoryAtom";
+import {repositoryTodoState, todoRepository} from "../atoms/repositoryAtom";
 
 function RepositoryPage(){
-  const todoState = useRecoilValue(todoRepository);
+  const todoList = useRecoilValue(repositoryTodoState);
+  const {addTodo,deleteTodo}=useRecoilValue(todoRepository);
 
   return(
     <div>
 
       <button
         onClick={()=>{
-          const newId = todoState.getTodo().length;
-          todoState.addTodo(newId);
+          const newId = todoList.length;
+          addTodo(newId);
         }}
       >
         데이터 추가하기
       </button>
       <button
-        onClick={()=>todoState.deleteTodo()}
+        onClick={()=>deleteTodo()}
       >
         데이터 삭제하기
       </button>
       {
-        todoState.getTodo().map((todo) =>(
+        todoList.map((todo) =>(
           <div key={todo.id}>{todo.description}</div>
         ))
       }

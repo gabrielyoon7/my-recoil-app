@@ -11,28 +11,23 @@ export const repositoryTodoState = atom({
 export const todoRepository=selector({
   key:'todoRepository',
   get:({get,getCallback})=>{
-    const todoList = get(repositoryTodoState);
 
-    const getTodo = () => {
-      return todoList;
-    }
-
-    const addTodo = getCallback(({ set }) => (newId) => {
-      set(repositoryTodoState, (prev) => [...prev, {
+    const addTodo = getCallback(({ set,snapshot }) => async (newId) => {
+      const todoList = await snapshot.getPromise(repositoryTodoState)
+      set(todoList, (prev) => [...prev, {
         id:newId,
         description:`헬로리코일: ${newId}`
       }]);
     });
 
-    const deleteTodo = getCallback(({set})=>()=>{
-      set(repositoryTodoState,prev=>[...prev.slice(0,prev.length-1)])
+    const deleteTodo = getCallback(({set,snapshot})=>async()=>{
+      const todoList = await snapshot.getPromise(repositoryTodoState)
+      set(todoList,prev=>[...prev.slice(0,prev.length-1)])
     })
 
     return {
-      getTodo,
       addTodo,
       deleteTodo
     }
-
   }
 })
