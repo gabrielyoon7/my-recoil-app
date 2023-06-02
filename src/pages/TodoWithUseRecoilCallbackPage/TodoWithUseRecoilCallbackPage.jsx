@@ -1,26 +1,26 @@
-import {useRecoilState} from "recoil";
+import {useRecoilCallback, useRecoilValue} from "recoil";
 import {todoListState} from "../../atoms/todo.jsx";
 
 function TodoWithUseRecoilCallbackPage() {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const todoList = useRecoilValue(todoListState);
 
-  const loadTodoList = async () => {
+  const loadTodoList = useRecoilCallback(({set}) => async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/todos')
     const data = await response.json();
-    setTodoList(data);
-  }
+    set(todoListState, data);
+  }, []);
 
-  const handleCheckboxChange = (todoId) => {
-    setTodoList((prevTodoList) =>
+  const handleCheckboxChange = useRecoilCallback(({set}) => (todoId) => {
+    set(todoListState, (prevTodoList) =>
       prevTodoList.map((todo) =>
         todo.id === todoId ? {...todo, completed: !todo.completed} : todo
       )
     );
-  };
+  }, []);
 
-  const handleDelete = (todoId) => {
-    setTodoList((prevTodoList) => prevTodoList.filter((todo) => todo.id !== todoId))
-  }
+  const handleDelete = useRecoilCallback(({set}) => (todoId) => {
+    set(todoListState, (prevTodoList) => prevTodoList.filter((todo) => todo.id !== todoId))
+  }, []);
 
   return (
     <>
@@ -43,4 +43,3 @@ function TodoWithUseRecoilCallbackPage() {
 }
 
 export default TodoWithUseRecoilCallbackPage;
-

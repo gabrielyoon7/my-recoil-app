@@ -1,7 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom';
 import HomeLayout from './components/HomeLayout';
 import TodoPage from "./pages/TodoPage.jsx";
-import TodoWithUseRecoilCallbackPage from "./pages/TodoWithUseRecoilCallbackPage/TodoWithUseRecoilCallbackPage.jsx";
+import TodoWithUseRecoilCallbackPage from "./pages/TodoWithUseRecoilCallbackPage";
 import TodoWithCustomHookPage from "./pages/TodoWithCustomHookPage";
 
 export const homeChildren = [

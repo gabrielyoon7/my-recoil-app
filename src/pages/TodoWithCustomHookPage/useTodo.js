@@ -12,15 +12,13 @@ export const useTodo = () => {
   }
 
   const changeCheckbox = (todoId) => {
-    setTodoList((prevTodoList) =>
-      prevTodoList.map((todo) =>
-        todo.id === todoId ? {...todo, completed: !todo.completed} : todo
-      )
-    );
+    const newTodoList = todoList.map((todo) => todo.id === todoId ? {...todo, completed: !todo.completed} : todo)
+    setTodoList(newTodoList);
   };
 
   const deleteTodo = (todoId) => {
-    setTodoList((prevTodoList) => prevTodoList.filter((todo) => todo.id !== todoId))
+    const newTodoList = todoList.filter((todo) => todo.id !== todoId);
+    setTodoList(newTodoList);
   }
 
   return {
