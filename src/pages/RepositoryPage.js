@@ -10,8 +10,7 @@ function RepositoryPage(){
 
       <button
         onClick={()=>{
-          const newId = todoList.length;
-          addTodo(newId);
+          addTodo();
         }}
       >
         데이터 추가하기
