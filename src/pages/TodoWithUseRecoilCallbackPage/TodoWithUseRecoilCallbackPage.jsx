@@ -10,16 +10,14 @@ function TodoWithUseRecoilCallbackPage() {
     set(todoListState, data);
   }, []);
 
-  const handleCheckboxChange = useRecoilCallback(({set}) => (todoId) => {
-    set(todoListState, (prevTodoList) =>
-      prevTodoList.map((todo) =>
-        todo.id === todoId ? {...todo, completed: !todo.completed} : todo
-      )
-    );
+  const handleCheckboxChange = useRecoilCallback(({set, snapshot}) => async (todoId) => {
+    const todos = await snapshot.getPromise(todoListState);
+    set(todoListState, todos.map((todo) => todo.id === todoId ? {...todo, completed: !todo.completed} : todo));
   }, []);
 
-  const handleDelete = useRecoilCallback(({set}) => (todoId) => {
-    set(todoListState, (prevTodoList) => prevTodoList.filter((todo) => todo.id !== todoId))
+  const handleDelete = useRecoilCallback(({set, snapshot}) => async (todoId) => {
+    const todos = await snapshot.getPromise(todoListState);
+    set(todoListState, todos.filter((todo) => todo.id !== todoId))
   }, []);
 
   return (
