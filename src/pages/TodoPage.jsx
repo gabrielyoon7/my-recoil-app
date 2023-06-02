@@ -1,7 +1,7 @@
 import {useRecoilState} from "recoil";
 import {todoListState} from "../components/todo.jsx";
 
-function TodoWithUseRecoilCallbackPage() {
+function TodoPage() {
   const [todoList, setTodoList] = useRecoilState(todoListState);
 
   const loadTodoList = async () => {
@@ -35,4 +35,4 @@ function TodoWithUseRecoilCallbackPage() {
   </>
 }
 
-export default TodoWithUseRecoilCallbackPage;
+export default TodoPage;

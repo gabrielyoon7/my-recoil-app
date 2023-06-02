@@ -1,6 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
+import {createBrowserRouter} from 'react-router-dom';
 import HomeLayout from './components/HomeLayout';
-import TodoWithUseRecoilCallbackPage from './pages/TodoWithUseRecoilCallbackPage';
+import TodoPage from "./pages/TodoPage.jsx";
+import TodoWithUseRecoilCallbackPage from "./pages/TodoWithUseRecoilCallbackPage.jsx";
+
 export const homeChildren = [
   {
     path: '',
@@ -9,8 +11,13 @@ export const homeChildren = [
   },
   {
     path: '/todo',
-    element: <TodoWithUseRecoilCallbackPage />,
-    title: 'TodoList with useRecoilCallback',
+    element: <TodoPage/>,
+    title: 'TodoList',
+  },
+  {
+    path: '/todo-with-use-recoil-callback',
+    element: <TodoWithUseRecoilCallbackPage/>,
+    title: 'Todo With useRecoilCallback',
   },
 ];
 
@@ -18,7 +25,7 @@ const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <HomeLayout />,
+      element: <HomeLayout/>,
       children: homeChildren,
     },
   ],
